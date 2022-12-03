@@ -2,6 +2,7 @@ class PokemonModel {
   String name;
   String img;
   List<String> type;
+
   PokemonModel({
     required this.name,
     required this.img,
