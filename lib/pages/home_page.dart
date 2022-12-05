@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:math';
+//import 'dart:math';
 import 'package:app06/models/pokemon_model.dart';
 import 'package:app06/ui/widges/item_pokemon_widget.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +26,9 @@ class _HomePagesState extends State<HomePages> {
     if (response.statusCode == 200) {
       Map<String, dynamic> myMap = json.decode(response.body);
       //pokemons = myMap["pokemon"];
-      pokemonsModel =
-          myMap["pokemon"].map((e) => pokemonsModel.fromJson(e)).toList();
+      pokemonsModel = myMap["pokemon"]
+          .map<PokemonModel>((e) => PokemonModel.fromJson(e))
+          .toList();
       setState(() {});
     }
   }
